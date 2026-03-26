@@ -2,9 +2,9 @@ import { MoneyCreate } from "./moneyType";
 import DataBase from "../utils/dataBase";
 
 class MoneyRepository {
-    public create = (data: MoneyCreate) => {
+    public create = async (data: MoneyCreate) => {
         try {
-            return DataBase.money.create({
+            return await DataBase.money.create({
                 data: {
                     name: data.name,
                     value: data.value,
