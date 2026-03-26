@@ -1,0 +1,45 @@
+{
+  "name": "moneycontrol",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon index.ts",
+    "migrate": "prisma migrate dev",
+    "generate": "prisma generate",
+    "push": "prisma db push",
+    "reset": "prisma migrate reset --force",
+    "build": "tsc",
+    "start": " npm run generate && node dist/index.js"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.5.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.24",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@prisma/client": "^7.5.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/cors": "^2.8.19",
+    "@types/crypto-js": "^4.2.2",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^25.5.0",
+    "esbuild": "^0.25.6",
+    "nodemon": "^3.1.10",
+    "prisma": "^7.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

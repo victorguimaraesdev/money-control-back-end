@@ -1,0 +1,19 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+
+datasource db {
+    provider = "sqlite"
+}
+
+enum MoneyType {
+    input
+    output
+}
+model Money {
+    id String @id @default(uuid())
+    name String
+    value Decimal
+    account MoneyType
+}
