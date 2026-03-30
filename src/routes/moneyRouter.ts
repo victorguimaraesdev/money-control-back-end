@@ -6,6 +6,7 @@ class MoneyRouter {
 
     public getRouter = () => {
         this.router.post('/create', MoneyController.create)
+        this.router.get('/getall', MoneyController.getAll)
 
         return this.router
     }

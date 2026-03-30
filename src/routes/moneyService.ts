@@ -3,14 +3,23 @@ import MoneyRepository from "./moneyRepository";
 
 class MoneyService {
     public create = async (data: MoneyCreate) => {
-        try {
-            if (Math.sign(Number(data.value)) == -1) {
-                throw new Error('O numero não pode ser negativo')
-            }
-            await MoneyRepository.create(data)
+        if (!data.account) {
+            throw new Error('Tipo de entrada não encontrada')
         }
-        catch (err) {
-            throw new Error('Não passou no service')
+        if (!data.name) {
+            throw new Error('Nome não encontrado')
         }
+        if (!data.value) {
+            throw new Error('Valor não encontrado')
+        }
+        if (Math.sign(Number(data.value)) == -1) {
+            throw new Error('O numero não pode ser negativo')
+        }
+
+        MoneyRepository.create(data)
+    }
+
+    public getAll = async () => {
+        return MoneyRepository.getAll()
     }
 } export default new MoneyService()
