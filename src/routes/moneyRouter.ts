@@ -7,7 +7,11 @@ class MoneyRouter {
     public getRouter = () => {
         this.router.post('/create', MoneyController.create)
         this.router.get('/getall', MoneyController.getAll)
-
+        this.router.delete('/delete', MoneyController.delete)
+    }
+    
+    public routes = () => {
+        this.getRouter()
         return this.router
     }
-} export default new MoneyRouter().getRouter()
+} export default new MoneyRouter().routes()

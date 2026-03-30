@@ -13,7 +13,7 @@ enum MoneyType {
 }
 model Money {
     id String @id @default(uuid())
-    name String
+    name String 
     value Decimal
     account MoneyType
 }
