@@ -45,5 +45,15 @@ class MoneyController {
             return res.status(400).json({ message: 'Erro ao deletar o registro' })
         }
     }
-
+    
+    public update = async (req: Request, res: Response) => {
+        try {
+            const { id, name, value, account } = req.body
+            await MoneyService.update({ id, name, value, account })
+            return res.status(200).json({ message: 'Update realizado com sucesso' })
+        }
+        catch (err) {
+            return res.status(400).json({ message: 'Erro ao realizar o update' })
+        }
+    }
 } export default new MoneyController()

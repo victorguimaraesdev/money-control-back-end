@@ -8,6 +8,7 @@ class MoneyRouter {
         this.router.post('/create', MoneyController.create)
         this.router.get('/getall', MoneyController.getAll)
         this.router.delete('/delete', MoneyController.delete)
+        this.router.put('/update', MoneyController.update)
     }
     
     public routes = () => {
