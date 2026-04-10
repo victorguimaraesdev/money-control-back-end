@@ -25,10 +25,7 @@ class MoneyController {
     public getAll = async (req: Request, res: Response) => {
         try {
             const response = await MoneyService.getAll()
-            return res.status(200).json({
-                data: response,
-                message: 'Sucesso ao buscar registros'
-            })
+            return res.status(200).json({response})
         }
         catch (err) {
             return res.status(400).json({ message: 'Não foi possivel buscar os registros' })
