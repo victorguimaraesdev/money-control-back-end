@@ -18,7 +18,7 @@ class MoneyController {
             return res.status(201).json({ message: 'Money Registrado com sucesso' })
         }
         catch (err) {
-            return res.status(400).json({ message: 'Erro ao criar money' })
+            return res.status(400).json({ message: 'Erro ao criar registro' })
         }
     }
 
